@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESRI MAP STYLES</title>
+    <style>
+        html,
+        body,
+        #viewDiv {
+            scroll-behavior: smooth;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body{
+          font-size: 12px;
+          display: grid;
+          grid-template-rows: 75% auto;
+        }
+        .button-container{
+          padding: 0;
+          margin: 0;
+          height: 50%;
+          list-style: none;
+          display: grid;
+          grid-template-columns: auto auto auto;
+        }
+        .grid-item {
+          background: #0b1f3a;
+          padding: 5px;
+          border-left: 5px solid #8f625e;
+          border-radius: 4px;
+          width: auto;
+          height: auto;
+          margin: 5px;
+          line-height: 50px;
+          color: white;
+          font-weight: bold;
+          font-size: 12px;
+          text-align: center;
+          
+        }
+        @media screen and (max-width: 480px) {
+          .button-container{
+          padding: 0;
+          margin: 0;
+          height: 50%;
+          list-style: none;
+          display: grid;
+          grid-template-columns: auto auto;
+        }
+        }
+        .grid-item:hover{
+          background: #061222;
+        }
+        p{
+          margin: 0 0 0 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.19/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.19/"></script>
+    <script src='index.js'></script>
+</head>
+<body>
+  <div id='viewDiv'></div>
+  <p id='text'>Map in Display: <b><span id="status">arcgis-imagery</span></b></p>
+  <ul class='button-container' id='button-cover'>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-imagery">Imagery Hybrid</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-imagery-standard">Imagery</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-imagery-labels">The reference layer from arcgis-imagery</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-light-gray">Light Gray Canvas</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-dark-gray">Dark Gray Canvas</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-navigation">Navigation</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-navigation-night">Navigation (Night)</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-streets">Streets</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-streets-night">Streets (Night)</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-streets-relief">Streets (with Relief)</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-topographic">Topographic</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-oceans">Oceans</li>
+      <li onclick="getImage(this)" class='grid-item' id="osm-standard">OpenStreetMap</li>
+      <li onclick="getImage(this)" class='grid-item' id="osm-standard-relief">OpenStreetMap (with Relief)</li>
+      <li onclick="getImage(this)" class='grid-item' id="osm-streets">OpenStreetMap (Streets)</li>
+      <li onclick="getImage(this)" class='grid-item' id="osm-streets-relief">OpenStreetMap (Streets with Relief)</li>
+      <li onclick="getImage(this)" class='grid-item' id="osm-light-gray">OpenStreetMap (Light Gray Canvas)</li>
+      <li onclick="getImage(this)" class='grid-item' id="osm-dark-gray">OpenStreetMap (Dark Gray Canvas)</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-terrain">Terrain with Labels</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-community">Community Map</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-charted-territory">Charted Territory Map</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-colored-pencil">Colored Pencil Map</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-nova">Nova Map</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-modern-antique">Modern Antique Map</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-midcentury">Mid-Century Map</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-newspaper">Newspaper Map</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-hillshade-light">L. hillshade layer</li>
+      <li onclick="getImage(this)" class='grid-item' id="arcgis-hillshade-dark">D. hillshade layer</li>
+  </ul>
+</body>
+</html>
